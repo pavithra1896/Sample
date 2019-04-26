@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head> <title>	Candy</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="p.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body><div class="container">
+<h1 class="compare-pricing-toda">Compare pricing today!</h1></br>
+<p  class="lorem-ipsum-is-simpl">Compare pricing of lollipop and icecandies on monthly and annual basis!.</p></h1></br></br>
+<div ng-app="myApp" ng-controller="myCtrl">
+<div class="rectangle" >
+<button class="rectangleb" ng-click="func1()"><span class="serve25">25 Serving</span></button>
+<button class="rectangleb" ng-click="func2()"><span class="serve25">50 Serving</span></button>
+<button class="rectanglec" ng-click="func3()"><span class="serve25">100 Serving</span></button>
+<button class="rectangleb" ng-click="func4()"><span class="serve25">200 Serving</span></button></div>
+<p class="al"> Annual </p>
+<p class="off50">50% off</p>
+<div class="rectangle1">
+  <input type="hidden" id="dum" value={{serving}}>
+  <input type="range" min="0" max="1"  step="1" class="slider" id="myRange"   onclick="on()" ></div>
+<p class="monthly">Monthly</p></br></br>
+<div class="rectangle-copy-17 a"> 
+ <p class="lollipop">lollipop </p>
+<p class="s100" id="s100">$0</p>
+<p class="body-copy-35"> Per month</p>
+<p class="body-copy-5 ">For {{serving}} serving</p> </div>
+<div class="rectangle-copy-17 b"> 
+<p class="icecandy">Icecandy</p>
+<p class="copy" id="copy">$0</p>
+<p class="body-copy-36">Per month</p>
+<p class="body-copy-6">For {{serving}} serving</p></div></div>
+<div class="rectangle-copy-19"> 
+<p class="your-savings-with-lo">Your savings
+with lollipop</p>
+<span class="so100" id="so100s">$0</span>
+<p class="body-copy-37">Per month</p></div>
+</div>
+ <script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.func1 = function() {
+        $scope.serving=25;
+        }
+    $scope.func2 = function() {
+        $scope.serving=50;
+    }
+    $scope.func3 = function() {
+        $scope.serving=100;
+    }
+    $scope.func4 = function() {
+  $scope.serving=200; 
+ }});
+</script>
+<script> 
+  function on(){
+var a=document.getElementById("myRange").value;
+var serv=document.getElementById("dum").value;
+  if(a==0){
+	 var lolli =serv*0.5;
+   var ice= serv*1;	  
+   var y = ice -lolli;} 
+   if(a==1){
+  var lolli =serv*1;
+   var ice= serv*2;    
+   var y = ice -lolli;}
+       document.getElementById("s100").innerHTML= "$" + lolli;
+       document.getElementById("copy").innerHTML="$" + ice;
+       document.getElementById("so100s").innerHTML= "$" + y; }
+</script></div>
+ </body>
+
+</html>
